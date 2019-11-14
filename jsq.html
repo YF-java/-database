@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>条件语句</title>
+    <script type="text/javascript">
+    window.onload=function(){
+        var num1=document.getElementById("num1");
+        var num2=document.getElementById("num2");
+        var operator=document.getElementById("operator");
+        var divmsg=document.getElementById("result");
+        var result="";
+        var compute=document.getElementById("compute");
+        compute.onclick=function(){
+            switch(operator.value){
+            case "加":result=Number(num1.value)+Number(num2.value);break;
+            case "减":result=num1.value-num2.value;break;            
+            case "乘":result=num1.value*num2.value;break;
+            case "除":result=num1.value/num2.value;break;
+            case "模":result=Numbernum1.value%num2.value;break;
+            }
+            divmsg.innerHTML="结果是:"+result;
+        }
+    }
+    </script>
+</head>
+<body>
+        <div>
+            <label>请输入第一个数字:</label>
+            <input type="text" id="num1" name="txtNum1"/>
+        </div>
+        <div>
+            <label>请输入第二个数字:</label>
+            <input type="text" id="num2" name="txtNum2"/>
+        </div>
+        <div>
+            <label>请选择运算法则:</label>
+            <select id="operator">
+                <option value="加">加</option>
+                <option value="减">减</option>
+                <option value="乘">乘</option>
+                <option value="除">除</option>
+                <option value="模">模</option>
+            </select>
+            <button id="compute">计算</button>
+        </div>
+        <div id="result"></div>
+</body>
+</html>
